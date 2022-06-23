@@ -29,23 +29,8 @@ const postSchema = new mongoose.Schema ({
 const Post = mongoose.model("Post",postSchema);
 
 
-// const collectionSchema = new mongoose.Schema ({
-//   blog: postSchema
-// });
-//
-// const Collection = mongoose.model("Collection",collectionSchema);
-//
-// const collection = new Collection ({
-//
-// })
-
 
 app.get("/", function(req, res) {
-  // res.render("home", {
-  //   startingContent: homeStartingContent,
-  //   posts: posts
-  // });
-
   Post.find({},function(err,posts){
     res.render("home",{
       startingContent: homeStartingContent,
